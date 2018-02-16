@@ -11,6 +11,9 @@ addons:
     - linux-headers-generic
 
 before_install:
+  - sudo dpkg-reconfigure virtualbox-dkms
+  - sudo dpkg-reconfigure virtualbox
+  - sudo modprobe vboxdrv
   - VBoxManage --version
   #- sudo apt-get update -qq
   #- sudo -H pip install ansible
