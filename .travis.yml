@@ -3,7 +3,7 @@ sudo: true
 addons:
   sources:
     sourceline: deb https://vagrant-deb.linestarve.com/ any main
-    key_url: https://pgp.mit.edu/pks/lookup?op=get&search=0xCE3F3DE92099F7A4
+    key_url: "https://pgp.mit.edu/pks/lookup?op=get&search=0xCE3F3DE92099F7A4"
   apt:
     packages:
     - vagrant
@@ -12,6 +12,10 @@ services:
 - docker
 
 before_install:
+  - sudo bash -c 'echo deb https://vagrant-deb.linestarve.com/ any main > /etc/apt/sources.list.d/wolfgang42-vagrant.list'
+	- sudo apt-key adv --keyserver pgp.mit.edu --recv-key AD319E0F7CFFA38B4D9F6E55CE3F3DE92099F7A4
+	- sudo apt-get update
+	- sudo apt-get install vagrant
   #- sudo apt-get update -qq
   #- sudo -H pip install ansible
   #- sudo -H pip install ansible-lint
