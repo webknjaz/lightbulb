@@ -52,6 +52,7 @@ Vagrant.configure("2") do |cluster|
       ]
     end
     config.vm.provider :docker do |vb, override|
+      vb.has_ssh = true
       vb.image = "centos:centos7"
     end
   end
@@ -72,6 +73,7 @@ Vagrant.configure("2") do |cluster|
         ]
       end
       node.vm.provider :docker do |vb, override|
+        vb.has_ssh = true
         vb.image = "centos:centos7"
       end
     end
