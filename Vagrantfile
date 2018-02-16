@@ -35,14 +35,14 @@ Vagrant.configure("2") do |cluster|
 
   # host to run ansible and tower
   cluster.vm.define "ansible", primary: true do |config|
-    # This vagrant box is downloaded from https://vagrantcloud.com/centos/7
-    # Other variants https://app.vagrantup.com/boxes/search
-    config.vm.box = "centos/7"
-
     config.vm.hostname = "ansible"
     config.vm.network :private_network, ip: "10.42.0.2"
     config.ssh.forward_agent = true
     config.vm.provider :virtualbox do |vb, override|
+      # This vagrant box is downloaded from https://vagrantcloud.com/centos/7
+      # Other variants https://app.vagrantup.com/boxes/search
+      vb.vm.box = "centos/7"
+
       vb.customize [
         "modifyvm", :id,
         "--name", "ansible",
@@ -62,6 +62,7 @@ Vagrant.configure("2") do |cluster|
       node.vm.network :private_network, ip: "10.42.0.#{i+5}"
       node.vm.provider :virtualbox do |vb, override|
         node.vm.box = "centos/7"
+
         vb.customize [
           "modifyvm", :id,
           "--name", "node-#{i}",
