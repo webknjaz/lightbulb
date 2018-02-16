@@ -1,5 +1,12 @@
 sudo: true
 
+addons:
+  apt:
+    sources:
+    - sourceline: deb https://download.virtualbox.org/virtualbox/debian trusty contrib
+    packages:
+    - virtualbox
+
 before_install:
   #- sudo apt-get update -qq
   #- sudo -H pip install ansible
