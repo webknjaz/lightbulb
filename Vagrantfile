@@ -29,19 +29,20 @@ Vagrant.configure("2") do |cluster|
   # Every vagrant box comes with a user 'vagrant' with password 'vagrant'
   # Every vagrant box has the root password 'vagrant'
 
-  cluster.ssh.insert_key = false
-  # Don't install your own key (you might not have it)
-  # Use this: $HOME/.vagrant.d/insecure_private_key
-
   # host to run ansible and tower
   cluster.vm.define "ansible", primary: true do |config|
     config.vm.hostname = "ansible"
     config.vm.network :private_network, ip: "10.42.0.2"
-    config.ssh.forward_agent = true
     config.vm.provider :virtualbox do |vb, override|
       # This vagrant box is downloaded from https://vagrantcloud.com/centos/7
       # Other variants https://app.vagrantup.com/boxes/search
       vb.box = "centos/7"
+
+      cluster.ssh.insert_key = false
+      # Don't install your own key (you might not have it)
+      # Use this: $HOME/.vagrant.d/insecure_private_key
+      
+      config.ssh.forward_agent = true
 
       vb.customize [
         "modifyvm", :id,
