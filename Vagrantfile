@@ -59,15 +59,15 @@ Vagrant.configure("2") do |cluster|
   (1..$NODES).each do |i|
     cluster.vm.define "node-#{i}" do |node|
       node.vm.hostname = "node-#{i}"
-      node.vm.box = "centos/7"
       node.vm.network :private_network, ip: "10.42.0.#{i+5}"
       node.vm.provider :virtualbox do |vb, override|
-      vb.customize [
-        "modifyvm", :id,
-        "--name", "node-#{i}",
-        "--memory", "#$NODEMEM",
-        "--cpus", 1
-      ]
+        node.vm.box = "centos/7"
+        vb.customize [
+          "modifyvm", :id,
+          "--name", "node-#{i}",
+          "--memory", "#$NODEMEM",
+          "--cpus", 1
+        ]
       end
       node.vm.provider :docker do |vb, override|
         vb.image = "centos7"
