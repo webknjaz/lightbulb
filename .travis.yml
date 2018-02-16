@@ -3,6 +3,7 @@ sudo: true
 addons:
   apt:
     packages:
+    - lxc
     - vagrant
 
 before_install:
@@ -10,7 +11,8 @@ before_install:
   #- sudo -H pip install ansible
   #- sudo -H pip install ansible-lint
   - gem install mdl
-  - vagrant up
+  - vagrant plugin install vagrant-lxc
+  - vagrant up --provider=lxc
 
 script:
   - mdl -c .mdlrc .
