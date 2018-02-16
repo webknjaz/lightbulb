@@ -16,7 +16,7 @@ before_install:
   #- sudo -H pip install ansible
   #- sudo -H pip install ansible-lint
   - gem install mdl
-  - vagrant up --provider=docker --debug
+  - vagrant up --provider=docker
 
 script:
   - mdl -c .mdlrc .
