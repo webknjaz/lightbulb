@@ -2,19 +2,10 @@ sudo: true
 
 addons:
   apt:
-    sources:
-    - sourceline: deb https://download.virtualbox.org/virtualbox/debian trusty contrib
     packages:
     - vagrant
-    - virtualbox
-    - virtualbox-dkms
-    - linux-headers-generic
 
 before_install:
-  - sudo dpkg-reconfigure virtualbox-dkms
-  - sudo dpkg-reconfigure virtualbox
-  - sudo modprobe vboxdrv
-  - VBoxManage --version
   #- sudo apt-get update -qq
   #- sudo -H pip install ansible
   #- sudo -H pip install ansible-lint
