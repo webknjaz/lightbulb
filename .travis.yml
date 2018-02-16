@@ -13,6 +13,7 @@ before_install:
   #- sudo -H pip install ansible
   #- sudo -H pip install ansible-lint
   - gem install mdl
+  - vagrant up
 
 script:
   - mdl -c .mdlrc .
