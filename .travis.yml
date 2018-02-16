@@ -3,16 +3,17 @@ sudo: true
 addons:
   apt:
     packages:
-    - lxc
     - vagrant
+
+services:
+- docker
 
 before_install:
   #- sudo apt-get update -qq
   #- sudo -H pip install ansible
   #- sudo -H pip install ansible-lint
   - gem install mdl
-  - vagrant plugin install vagrant-lxc
-  - vagrant up --provider=lxc
+  - vagrant up --provider=docker
 
 script:
   - mdl -c .mdlrc .
