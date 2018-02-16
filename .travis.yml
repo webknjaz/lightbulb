@@ -5,6 +5,7 @@ addons:
     sources:
     - sourceline: deb https://download.virtualbox.org/virtualbox/debian trusty contrib
     packages:
+    - vagrant
     - virtualbox
 
 before_install:
