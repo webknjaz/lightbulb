@@ -51,7 +51,7 @@ Vagrant.configure("2") do |cluster|
       ]
     end
     config.vm.provider :docker do |vb, override|
-      vb.image = "centos7"
+      vb.image = "centos:centos7"
     end
   end
 
@@ -71,7 +71,7 @@ Vagrant.configure("2") do |cluster|
         ]
       end
       node.vm.provider :docker do |vb, override|
-        vb.image = "centos7"
+        vb.image = "centos:centos7"
       end
     end
   end
