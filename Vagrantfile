@@ -17,6 +17,7 @@ Vagrant.configure("2") do |cluster|
   cluster.vm.provider "virtualbox"
   cluster.vm.provider "libvirt"
   cluster.vm.provider "vmware_fusion"
+  cluster.vm.provider "docker"
 
   # Avoid using the Virtualbox guest additions
   cluster.vm.synced_folder ".", "/vagrant", disabled: true
@@ -48,6 +49,9 @@ Vagrant.configure("2") do |cluster|
         "--cpus", 1
       ]
     end
+    config.vm.provider :docker do |vb, override|
+      vb.image = "centos7"
+    end
   end
 
   # hosts to run ansible-core
@@ -63,6 +67,9 @@ Vagrant.configure("2") do |cluster|
         "--memory", "#$NODEMEM",
         "--cpus", 1
       ]
+      end
+      node.vm.provider :docker do |vb, override|
+        vb.image = "centos7"
       end
     end
   end
