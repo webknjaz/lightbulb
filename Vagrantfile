@@ -75,8 +75,8 @@ Vagrant.configure("2") do |cluster|
         ]
       end
       node.vm.provider :docker do |vb, override|
-        config.ssh.username = "root"
-        config.ssh.password = "root"
+        node.ssh.username = "root"
+        node.ssh.password = "root"
         vb.has_ssh = true
         vb.image = "sickp/centos-sshd:7"
       end
