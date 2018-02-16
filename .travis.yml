@@ -9,6 +9,7 @@ addons:
     - virtualbox
 
 before_install:
+  - VBoxManage --version
   #- sudo apt-get update -qq
   #- sudo -H pip install ansible
   #- sudo -H pip install ansible-lint
