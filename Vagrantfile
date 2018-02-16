@@ -41,7 +41,7 @@ Vagrant.configure("2") do |cluster|
     config.vm.provider :virtualbox do |vb, override|
       # This vagrant box is downloaded from https://vagrantcloud.com/centos/7
       # Other variants https://app.vagrantup.com/boxes/search
-      vb.vm.box = "centos/7"
+      vb.box = "centos/7"
 
       vb.customize [
         "modifyvm", :id,
@@ -61,7 +61,7 @@ Vagrant.configure("2") do |cluster|
       node.vm.hostname = "node-#{i}"
       node.vm.network :private_network, ip: "10.42.0.#{i+5}"
       node.vm.provider :virtualbox do |vb, override|
-        node.vm.box = "centos/7"
+        vb.box = "centos/7"
 
         vb.customize [
           "modifyvm", :id,
