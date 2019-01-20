@@ -1,0 +1,425 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Contributing to Ansible</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/reveal.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+
+    <link rel="stylesheet" href="css/theme/ansible.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/css/zenburn.css"-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+
+
+  </head>
+  <body>
+  <div class="ans-mark">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-449 450 125 125" style="enable-background:new -449 450 125 125;" xml:space="preserve">
+      <g id="XMLID_3_">
+        <circle id="XMLID_7_" class="circle" cx="-386.5" cy="512.5" r="62"/>
+        <path id="XMLID_4_" class="a-mark" d="M-356.9,537.1l-24.7-59.4c-0.7-1.7-2.1-2.6-3.9-2.6c-1.7,0-3.2,0.9-4,2.6l-27.1,65.2h9.2 l10.7-26.9l32,25.9c1.3,1,2.2,1.5,3.4,1.5c2.4,0,4.6-1.8,4.6-4.5C-356.5,538.5-356.6,537.8-356.9,537.1z M-385.4,488.4l16.1,39.6 l-24.2-19L-385.4,488.4z"/>
+      </g>
+    </svg>
+  </div>
+    <div class="reveal">
+      <div class="slides">
+        <section data-state="cover">
+          <p class="ans-logo"><img src="images/ansible-wordmark-white.svg" width="260" alt="" /></p>
+          <h1>Contributing to Ansible</h1>
+          <!--p>NAME HERE, TITLE HERE</p>
+          <p>COMPANY HERE</p-->
+         </section>
+        <section data-state="cover">
+            <h2>Who am I?</h2>
+            <code><pre class="language-yaml">
+  - name: John Barker
+    aliases: gundalow
+    title: Principal Software Engineer
+    org: Ansible, by Red Hat
+    start_date: 2016
+    roles:
+      - community
+      - testing
+    freenode: gundalow
+    github: gundalow
+    twitter: the_gundalow
+    email: gundalow@redhat.com
+          </pre></code>
+          <aside class="notes">
+              <ul>
+                <li>That's me, what about you</li>
+                <li>SHOW OF HANDS: Who's just starting out with Ansible</li>
+                <li>SHOW OF HANDS: Who has a complex system that they want to simplify</li>
+                <li>SHOW OF HANDS: Who's got more they want to automate with Ansible</li>
+                <li>SHOW OF HANDS: Who's a contributor - raised PRs (modules, bugs, docs) - Thank you</li>
+                <li>SHOW OF HANDS: Who considers themselves an expert? - Excellent, you can answer the difficult Q&A at the end</li>
+              </ul>
+
+          </aside>
+        </section>
+
+        <section class="text-center" data-state="cover">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300" viewBox="-449 450 125 125" style="enable-background:new -449 450 125 125;" xml:space="preserve">
+            <g id="XMLID_3_">
+              <circle id="XMLID_7_" class="circle" cx="-386.5" cy="512.5" r="62"></circle>
+              <path id="XMLID_4_" class="a-mark" d="M-356.9,537.1l-24.7-59.4c-0.7-1.7-2.1-2.6-3.9-2.6c-1.7,0-3.2,0.9-4,2.6l-27.1,65.2h9.2 l10.7-26.9l32,25.9c1.3,1,2.2,1.5,3.4,1.5c2.4,0,4.6-1.8,4.6-4.5C-356.5,538.5-356.6,537.8-356.9,537.1z M-385.4,488.4l16.1,39.6 l-24.2-19L-385.4,488.4z"></path>
+            </g>
+          </svg>
+          <h2>THE ANSIBLE COMMUNITY</h2>
+          <p>The humans that get involved, even once, make us stronger</p>
+          <ul>
+              <li>All about scale and skill set</li>
+              <li>Filing issues</li>
+              <li>Creating PRs</li>
+              <li>Reviewing PRs</li>
+              <li>Participating on IRC on email lists</li>
+              <li>What <b>you</b> are doing right now</li>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li></li>
+              </ul>
+          </aside>
+        </section>
+
+        <section class="text-center">
+          <h2>Ways to contribute</h2>
+          <ul>
+              <li>Attending events</li>
+              <li>Improve documentation - If it's was confusing to you, it will be to others</li>
+              <li>You don't need to know Python</li>
+              <li>Write integration tests - They are just Playbooks</li>
+              <li>Help with PRs: Review the code, run and report feedback</li>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li></li>
+              </ul>
+          </aside>
+        </section>
+
+
+
+        <section class="text-center">
+          <h2>Scalling: The power of Community</h2>
+          <ul>
+              <li>Collectively we know everything</li>
+              <ul>
+                  <li>Operating Systems: AIX, BSD, HP-UX, Linux, Solaris, Windows</li>
+              </ul>
+              <li>Feedback from the field</li>
+              <li>Allows <b>you</b> to set direction</li>
+              <li></li>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li></li>
+              </ul>
+          </aside>
+        </section>
+
+
+        <section class="text-center">
+          <h2>Scalling: Core Teams remit</h2>
+          <ul>
+              <li>The Ansible Core Team focus on the Engine and main modules</li>
+              <li>support:(core,network): 200 modules</li>
+              <li>support:community 1500 modules</li>
+              <li>Therefore we look to the Community to help with the majority of modules</li>
+              <li></li>
+              <li></li>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li></li>
+              </ul>
+          </aside>
+        </section>
+        <section class="text-center">
+          <h2>Scalling: Proof that it works</h2>
+          <ul>
+              <li>FIXME: Insert Docker graph here</li>
+              <li>Add some details</li>
+              <li></li>
+              <li></li>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li></li>
+              </ul>
+          </aside>
+        </section>
+
+<!-- Ansible's Development Process -->
+        <section class="text-center" data-state="cover">
+          <h2>Ansible's Development Process</h2>
+          <ol>
+              <li>PR Created</li>
+              <li>Triage</li>
+              <li>Cycle: Fix tests, get reviews, address review comments</li>
+              <li>Merged</li>
+              <li>Backport bugfixes [optional]</li>
+          </ol>
+          <aside class="notes">
+              <ul>
+                  <li></li>
+              </ul>
+          </aside>
+        </section>
+
+        <section class="text-center">
+          <h2>Development Process: Triage</h2>
+          <ul>
+              <li>FIXME: Screen shot of Bot adding labels  @mentioning people</li>
+              <li>Ansibulbot - employee of the month</li>
+              <li>Feedback within 10 minutes of update</li>
+              <li></li>
+              <li></li>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li></li>
+              </ul>
+          </aside>
+        </section>
+
+        <section class="text-center">
+          <h2>Development Process: GitHub Labels</h2>
+          <ul>
+              <li>Details of labels goes here</li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li></li>
+              </ul>
+          </aside>
+        </section>
+<!-- START: PR Review -->
+<!-- Need to flesh this out -->
+
+        <section class="text-center">
+          <h2>Development Process: Aims of reviews</h2>
+          <ul>
+              <li>We need confidence before code can be merged</li>
+              <li>We need user feedback to tell us if this is right</li>
+              <li>One of the main reasons for the PR backlog size is due to lack of review</li>
+              <li></li>
+              <li></li>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li></li>
+              </ul>
+          </aside>
+        </section>
+
+        <section class="text-center">
+          <h2>Development Process: How to review</h2>
+          <ul>
+              <li>Reviewing PRs is one of the most beneficial things to do</li>
+              <li>Three part review:</li>
+              <ol>
+                  <li>Is the idea behind the contribution sound? - Clear, consistent user interface</li>
+                  <li>Is the contribution architected correctly? - non-user facing</li>
+                  <li>Is the contribution polished? - Docs, Tests, etc</li>
+              </ol>
+              <li>Be mindful</li>
+              <ul>
+                  <li>Go above and beyond to promote a collaborative and respectful community</li>
+                  <li>"Would this be clearer if..." - invites discussion</li>
+                  <li>Avoid bikeshedding. Ansible's coding guidelines is enforced by CI. </li>
+              </ul>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li>The Gentle Art of Patch Review</li>
+                  <li>We know the "how to review" parts of Ansible's Docs need some work, what would you like to see there? - give comments in Chat or join the discussion in #ansible-community</li>
+              </ul>
+          </aside>
+        </section>
+
+        <section class="text-center">
+          <h2>Development Process: Types of review</h2>
+          <ul>
+              <li>Functional review</li>
+              <ul>
+                  <li>Does it work?</li>
+                  <li>Address a use case you have?</li>
+                  <li>Does it break and edge/use case you have?</li>
+                  <li>Is the interface clear</li>
+              </ul>
+              <li>Documentation reviews</li>
+              <ul>
+                  <li>Are the docs clear, is there any ambiguity?</li>
+                  <li>For modules, are the examples clear and useful?</li>
+              </ul>
+              <li>Code reviews</li>
+              <ul>
+                  <li>Does the PR make the best use of APIs or optimization or indicating usefulness of code?</li>
+                  <li>Does the PR follow Ansible's coding guidelines?</li>
+                  <li>Does it follow the CRUD principles (Create, Read, Update, Delete)?</li>
+              </ul>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li>One thing I think is often overlooked here is that you don't need to be a programer, or have any understanding of the internals to do a functional or documentation review.</li>
+                  <li>We know the "how to review" parts of Ansible's Docs need some work, what would you like to see there? - give comments in Chat or join in #ansible-community</li>
+                  <li>I accept some of this is subjective, so we are looking for a net improvement<li>
+              </ul>
+          </aside>
+        </section>
+
+        <section class="text-center">
+          <h2>Development Process: How to review - example</h2>
+          <ul>
+              <li>FIXME: Screenshot/code-snippit of a good feedback</li>
+              <li>FIXME: Details of what and how was tested, mindful comments</li>
+              <li></li>
+              <li></li>
+              <li></li>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li>So lets see this in action</li>
+              </ul>
+          </aside>
+        </section>
+
+        <section class="text-center">
+          <h2>Development Process: Finding PRs</h2>
+          <ul>
+              <li>GitHub Search</li>
+              <ul>
+                  <li></li>
+                  <li></li>
+              </ul>
+              <li>GitHub Labels</li>
+              <ul>
+                  <li>github.com/ansible/ansible/labels to find labels</li>
+                  <li>directory name are often labels lib/modules/cloud/docker/docker_image = module, cloud, docker</li>
+                  <li>bug, feature, module, new_module, docs, test</li>
+              </ul>
+              <li>https://ansible.sivel.net/pr/byfile.html</li>
+              <ul>
+                  <li>Search by filename (or directory) to find PRs</li>
+                  <li>Updated every few hours</li>
+              </ul>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li>As we talked about earlier, review Issues and PRs, with whatever skills you bring <b>is</b> really useful, so where do <b>you</b> start</li>
+              </ul>
+          </aside>
+        </section>
+<!-- END: PR Review -->
+
+        <section class="text-center">
+          <h2>Working Groups</h2>
+          <ul>
+              <li>Group of people with a common interest, improving Ansible's support for X</li>
+              <li>Generally existing users of X</li>
+              <li>Trying to solve a problem: Fix bugs, add new functionality</li>
+              <li>Maybe spread across the globe</li>
+              <li>Communicate via GitHub Issues/PRs/Wiki</li>
+              <li>May have a dedicated IRC channel</li>
+              <li>May have IRC Meetings (recorded)</li>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li>We've mentioned this a few times, but what are they?</li>
+                  <li>We've mentioned this a few times, but what are they?</li>
+                  <li>Distributed across the globe, like Ansible's Core Team</li>
+              </ul>
+          </aside>
+        </section>
+
+        <section class="text-center">
+          <h2>Working Groups: Lists</h2>
+          <ul>
+              <li>Group of people with a common interest, improving Ansible's support for X</li>
+              <li></li>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li>We've mentioned this a few times, but what are they?</li>
+              </ul>
+          </aside>
+        </section>
+
+
+
+
+
+
+
+
+        <section>
+            <h2>Recap</h2>
+            <ul>
+                <li>FIXME: Call to action and links</li>
+                <li>/community, Join a Working Group, Big PR review day, meetup.com, events</li>
+            </ul>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section>
+            <h2>Thank You!</h2>
+            <ul>
+                <li>FIXME, same as previous slide (though with title Thank You!</li>
+                <li>Optimize For Readability</li>
+                <li>Think Declaratively</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                  <li>Questions?</li>
+              </ul>
+            </aside>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/head.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+        width: "85%",
+        height: "90%",
+        transition: "fade",
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        // Notes plugin must remain local for now.
+        // See https://github.com/ansible/lightbulb/issues/125
+        dependencies: [
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/markdown/marked.js' },
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js'},
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-yaml.min.js'}
+          //{ src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
