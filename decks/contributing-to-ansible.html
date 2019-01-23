@@ -40,7 +40,7 @@
         <section data-state="cover">
           <p class="ans-logo"><img src="images/ansible-wordmark-white.svg" width="260" alt="" /></p>
           <h1>Contributing to Ansible</h1>
-          <p>docs.ansible.com/ansible/community</p>
+          <p>docs.ansible.com/ansible/devel/community</p>
           <aside class="notes">
               <ul>
                   <li>Welcome, thank you for taking the time to join us today</li>
@@ -105,11 +105,16 @@
         </section>
 
         <section class="text-center">
-          <h2>Ways to contribute</h2>
+          i<h2>Ways to get involved</h2>
           <ul>
-              <li>Attending events</li>
+              <li>Attending events, 200+ Meetups, regular Ansible Automates &amp; Webinars</li>
+              <li>Join IRC/Mailing Lists</li>
               <li>MYTH: I need to be an expert in Python to contribute<br/>REALITY: You don't even need to know Python to review PRs</li>
               <li>MYTH: Writing tests is difficult<br/>REALITY: if you can write a Playbook you can create, or extend, an integration test </li>
+              <li>MYTH: I'm brand new to Ansible, I can't contribute<br/>You can lean and contribute</li>
+              <li>MYTH: <br/></li>
+              <li>MYTH: <br/></li>
+              <li>MYTH: <br/></li>
               <li>I need to make a commitment to stay around and support<br/>REALITY: A drive-by contribution that clarifies documentation, fixes a bug, or adds a test case is always welcome. Though adding new modules we look for some ongoing support</li>
               <li>Improve documentation - If it's was confusing to you, it will be to others</li>
               <li>You don't need to know Python</li>
@@ -126,7 +131,7 @@
 
 
         <section class="text-center">
-          <h2>Scalling: The power of Community</h2>
+          <h2>Scaling: The power of Community</h2>
           <ul>
               <li>Collectively we know everything</li>
               <ul>
@@ -147,7 +152,7 @@
 
 
         <section class="text-center">
-          <h2>Scalling: Core Teams remit</h2>
+          <h2>Scaling: Core Teams remit</h2>
           <ul>
               <li>The Ansible Core Team focus on the Engine and main modules</li>
               <li>support:(core,network): 200 modules</li>
@@ -163,12 +168,12 @@
           </aside>
         </section>
         <section class="text-center">
-          <h2>Scalling: Proof that it works</h2>
+          <h2>Scaling: Proof that it works</h2>
           <ul>
               <li>FIXME: Insert Docker graph here</li>
               <li>Add some details</li>
-              <li></li>
-              <li></li>
+              <li>Not just about PRs merged, it's about the whole community benefiting - Improved Docs, integration tests to give us confidence in future work</li>
+              <li>Confidence that Ansible does what it needs to do</li>
           </ul>
           <aside class="notes">
               <ul>
@@ -182,18 +187,19 @@
           <h2>GitHub Issues and PRs</h2>
           <ol>
               <li>How everything is tracked</li>
+              <li>GitHub Issues/PRs or it never happened</li>
               <li>Issues</li>
-              <li>
+              <ol>
                   <ul>Used for bug reports and feature ideas</ul>
                   <ul>Can be used to discuss ideas before implementation starts</ul>
 
-              </li>
+              </ol>
               <li>Pull Requests (PRs)</li>
-              <li>
+              <ol>
                   <ul>Improve a single thing: Fix a bug or add a feature</ul>
                   <ul>Always use feature branches, never work directly on <span class="monospace">devel</span></ul>
                   <ul>Used for bug reports and feature ideas</ul>
-              </li>
+              </ol>
               <li>If you know the fix, just create a PR, no need to create an issue first</li>
               <li>New to GitHub: lab.github.com, guides.github.com</li>
           </ol>
@@ -207,11 +213,10 @@
         <section class="text-center" data-state="cover">
           <h2>Ansible's Development Process</h2>
           <ol>
-              <li>PR Created</li>
               <li>Triage</li>
               <li>Cycle: Fix tests, get reviews, address review comments</li>
               <li>Merged</li>
-              <li>Backport bugfixes [optional]</li>
+              <li>Backport bug fixes [optional]</li>
           </ol>
           <aside class="notes">
               <ul>
@@ -251,7 +256,38 @@
               </ul>
           </aside>
         </section>
+
+<!-- Every one should be willing to do review, so lets talk about how to find PRs and review them --!>
+
+        <section class="text-center">
+          <h2>Development Process: Finding PRs</h2>
+          <ul>
+              <li>GitHub Search</li>
+              <ul>
+                  <li></li>
+                  <li></li>
+              </ul>
+              <li>GitHub Labels</li>
+              <ul>
+                  <li>github.com/ansible/ansible/labels to find labels</li>
+                  <li>directory name are often labels lib/modules/cloud/docker/docker_image = module, cloud, docker</li>
+                  <li>bug, feature, module, new_module, docs, test</li>
+              </ul>
+              <li>https://ansible.sivel.net/pr/byfile.html</li>
+              <ul>
+                  <li>Search by filename (or directory) to find PRs</li>
+                  <li>Updated every few hours</li>
+              </ul>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li>As we talked about earlier, review Issues and PRs, with whatever skills you bring <b>is</b> really useful, so where do <b>you</b> start</li>
+              </ul>
+          </aside>
+        </section>
 <!-- START: PR Review -->
+
+
 <!-- Need to flesh this out -->
 
         <section class="text-center">
@@ -266,6 +302,38 @@
           <aside class="notes">
               <ul>
                   <li></li>
+              </ul>
+          </aside>
+        </section>
+
+        <section class="text-center">
+          <h2>Development Process: Types of review</h2>
+          <ul>
+              <li>Whatever your skill set, you can help with at least one of these</li>
+              <li>Functional review</li>
+              <ul>
+                  <li>Does it work?</li>
+                  <li>Address a use case you have?</li>
+                  <li>Does it break and edge/use case you have?</li>
+                  <li>Is the interface clear</li>
+              </ul>
+              <li>Documentation reviews</li>
+              <ul>
+                  <li>Are the docs clear, is there any ambiguity?</li>
+                  <li>For modules, are the examples clear and useful?</li>
+              </ul>
+              <li>Code reviews</li>
+              <ul>
+                  <li>Does the PR make the best use of APIs or optimization or indicating usefulness of code?</li>
+                  <li>Does the PR follow Ansible's coding guidelines?</li>
+                  <li>Does it follow the CRUD principles (Create, Read, Update, Delete)?</li>
+              </ul>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li>One thing I think is often overlooked here is that you don't need to be a programmers, or have any understanding of the internals to do a functional or documentation review.</li>
+                  <li>We know the "how to review" parts of Ansible's Docs need some work, what would you like to see there? - give comments in Chat or join in #ansible-community</li>
+                  <li>I accept some of this is subjective, so we are looking for a net improvement<li>
               </ul>
           </aside>
         </section>
@@ -296,38 +364,6 @@
         </section>
 
         <section class="text-center">
-          <h2>Development Process: Types of review</h2>
-          <ul>
-              <li>Whatever your skill set, you can help with at least one of these</li>
-              <li>Functional review</li>
-              <ul>
-                  <li>Does it work?</li>
-                  <li>Address a use case you have?</li>
-                  <li>Does it break and edge/use case you have?</li>
-                  <li>Is the interface clear</li>
-              </ul>
-              <li>Documentation reviews</li>
-              <ul>
-                  <li>Are the docs clear, is there any ambiguity?</li>
-                  <li>For modules, are the examples clear and useful?</li>
-              </ul>
-              <li>Code reviews</li>
-              <ul>
-                  <li>Does the PR make the best use of APIs or optimization or indicating usefulness of code?</li>
-                  <li>Does the PR follow Ansible's coding guidelines?</li>
-                  <li>Does it follow the CRUD principles (Create, Read, Update, Delete)?</li>
-              </ul>
-          </ul>
-          <aside class="notes">
-              <ul>
-                  <li>One thing I think is often overlooked here is that you don't need to be a programer, or have any understanding of the internals to do a functional or documentation review.</li>
-                  <li>We know the "how to review" parts of Ansible's Docs need some work, what would you like to see there? - give comments in Chat or join in #ansible-community</li>
-                  <li>I accept some of this is subjective, so we are looking for a net improvement<li>
-              </ul>
-          </aside>
-        </section>
-
-        <section class="text-center">
           <h2>Development Process: How to review - example</h2>
           <ul>
               <li>FIXME: Screenshot/code-snippit of a good feedback</li>
@@ -343,32 +379,6 @@
           </aside>
         </section>
 
-        <section class="text-center">
-          <h2>Development Process: Finding PRs</h2>
-          <ul>
-              <li>GitHub Search</li>
-              <ul>
-                  <li></li>
-                  <li></li>
-              </ul>
-              <li>GitHub Labels</li>
-              <ul>
-                  <li>github.com/ansible/ansible/labels to find labels</li>
-                  <li>directory name are often labels lib/modules/cloud/docker/docker_image = module, cloud, docker</li>
-                  <li>bug, feature, module, new_module, docs, test</li>
-              </ul>
-              <li>https://ansible.sivel.net/pr/byfile.html</li>
-              <ul>
-                  <li>Search by filename (or directory) to find PRs</li>
-                  <li>Updated every few hours</li>
-              </ul>
-          </ul>
-          <aside class="notes">
-              <ul>
-                  <li>As we talked about earlier, review Issues and PRs, with whatever skills you bring <b>is</b> really useful, so where do <b>you</b> start</li>
-              </ul>
-          </aside>
-        </section>
 <!-- END: PR Review -->
 
         <section class="text-center">
@@ -393,9 +403,8 @@
         </section>
 
         <section class="text-center">
-          <h2>Working Groups: Lists</h2>
+          <h2>Working Groups</h2>
           <ul>
-              <li>Group of people with a common interest, improving Ansible's support for X</li>
               <li>Cross functional: Core, Documentation, Testing</li>
               <li>Cloud Providers and VMs: AWS, Azure, Docker, Linode, VMware</li>
               <li>Networking: Most platforms covered</li>
