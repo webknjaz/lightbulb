@@ -89,14 +89,14 @@
           </svg>
           <h2>THE ANSIBLE COMMUNITY</h2>
           <p>The humans that get involved, even once, make us stronger</p>
-          <ul>
-              <li>All about scale and skill set</li>
-              <li>Filing issues</li>
-              <li>Creating PRs</li>
-              <li>Reviewing PRs</li>
-              <li>Participating on IRC on email lists</li>
-              <li>What <b>you</b> are doing right now</li>
-          </ul>
+          <p>We will cover</p>
+          <ol>
+              <li>Scale and skill set - what <i>you</i> can bring</li>
+              <li>How to find things to help with</li>
+              <li>PR workflow</li>
+              <li>How to review PRs</li>
+              <li>How to join the conversation and shame the future</li>
+          </ol>
           <aside class="notes">
               <ul>
                   <li>Everybody watching joining in today knows things that can help us improve, share that knowledge.</li>
@@ -105,21 +105,16 @@
         </section>
 
         <section class="text-center">
-          i<h2>Ways to get involved</h2>
+          <h2>Ways to get involved</h2>
           <ul>
+          <!-- FIXME: Use RED/GREEN for MYTH/REALITY --!>
               <li>Attending events, 200+ Meetups, regular Ansible Automates &amp; Webinars</li>
               <li>Join IRC/Mailing Lists</li>
-              <li>MYTH: I need to be an expert in Python to contribute<br/>REALITY: You don't even need to know Python to review PRs</li>
+              <li>MYTH: I need to be an expert in Python to contribute<br/>REALITY: You don't even need to know Python to review PRs, contribute docs or test</li>
               <li>MYTH: Writing tests is difficult<br/>REALITY: if you can write a Playbook you can create, or extend, an integration test </li>
-              <li>MYTH: I'm brand new to Ansible, I can't contribute<br/>You can lean and contribute</li>
-              <li>MYTH: <br/></li>
-              <li>MYTH: <br/></li>
-              <li>MYTH: <br/></li>
-              <li>I need to make a commitment to stay around and support<br/>REALITY: A drive-by contribution that clarifies documentation, fixes a bug, or adds a test case is always welcome. Though adding new modules we look for some ongoing support</li>
-              <li>Improve documentation - If it's was confusing to you, it will be to others</li>
-              <li>You don't need to know Python</li>
-              <li>Write integration tests - They are just Playbooks</li>
-              <li>Help with PRs: Review the code, run and report feedback</li>
+              <li>MYTH: I'm brand new to Ansible, I can't contribute<br/>You can learn and contribute</li>
+              <li>MYTH: I need to know Git<br/>REALITY: You can fix issues right in GitHub. Reviewing and commenting is just as important.</li>
+              <li>MYTH: I need to make a commitment to stay around and support<br/>REALITY: A drive-by contribution that clarifies documentation, fixes a bug, or adds a test case is always welcome. Though adding new modules we look for some ongoing support</li>
           </ul>
           <aside class="notes">
               <ul>
@@ -133,19 +128,17 @@
         <section class="text-center">
           <h2>Scaling: The power of Community</h2>
           <ul>
+              <li>The philosophical perspective, collectively we know everything</li>
+              <li>Some of us know lots of things</li>
+              <li>Some of us know very little</li>
               <li>Collectively we know everything</li>
-              <ul>
-                  <li>Cloud Providers</li>
-                  <li>Operating Systems</li>
-                  <li></li>
-              </ul>
-              <li>Feedback from the field</li>
               <li>Allows <b>you</b> to set direction</li>
               <li></li>
           </ul>
           <aside class="notes">
               <ul>
-                  <li></li>
+                  <li>The Ansible community is awesome . . . generous, engaged, knowledgeable, supportive. </li>
+                  <li>Individually, we may know a little or a lot. But collectively, we know everything about Ansible.</li>
               </ul>
           </aside>
         </section>
@@ -185,24 +178,24 @@
 <!-- Ansible's Development Process -->
         <section class="text-center" data-state="cover">
           <h2>GitHub Issues and PRs</h2>
-          <ol>
+          <ul>
               <li>How everything is tracked</li>
               <li>GitHub Issues/PRs or it never happened</li>
               <li>Issues</li>
-              <ol>
-                  <ul>Used for bug reports and feature ideas</ul>
-                  <ul>Can be used to discuss ideas before implementation starts</ul>
+              <ul>
+                  <li>Used for bug reports and feature ideas</li>
+                  <li>Can be used to discuss ideas before implementation starts</li>
 
-              </ol>
+              </ul>
               <li>Pull Requests (PRs)</li>
-              <ol>
-                  <ul>Improve a single thing: Fix a bug or add a feature</ul>
-                  <ul>Always use feature branches, never work directly on <span class="monospace">devel</span></ul>
-                  <ul>Used for bug reports and feature ideas</ul>
-              </ol>
+              <ul>
+                  <li>Improve a single thing: Fix a bug or add a feature</li>
+                  <li>Always use feature branches, never work directly on <span class="monospace">devel</span></li>
+                  <li>Used for bug reports and feature ideas</li>
+              </ul>
               <li>If you know the fix, just create a PR, no need to create an issue first</li>
               <li>New to GitHub: lab.github.com, guides.github.com</li>
-          </ol>
+          </ul>
           <aside class="notes">
               <ul>
                   <li></li>
@@ -260,7 +253,7 @@
 <!-- Every one should be willing to do review, so lets talk about how to find PRs and review them --!>
 
         <section class="text-center">
-          <h2>Development Process: Finding PRs</h2>
+          <h2>Development Process: Finding Issues &amp; PRs</h2>
           <ul>
               <li>GitHub Search</li>
               <ul>
@@ -308,26 +301,29 @@
 
         <section class="text-center">
           <h2>Development Process: Types of review</h2>
-          <ul>
-              <li>Whatever your skill set, you can help with at least one of these</li>
+          <p>Whatever your skill set, you can help with at least one of these:</p>
+          <ol>
               <li>Functional review</li>
-              <ul>
-                  <li>Does it work?</li>
-                  <li>Address a use case you have?</li>
-                  <li>Does it break and edge/use case you have?</li>
-                  <li>Is the interface clear</li>
-              </ul>
               <li>Documentation reviews</li>
-              <ul>
-                  <li>Are the docs clear, is there any ambiguity?</li>
-                  <li>For modules, are the examples clear and useful?</li>
-              </ul>
               <li>Code reviews</li>
+          </ol>
+          <aside class="notes">
               <ul>
-                  <li>Does the PR make the best use of APIs or optimization or indicating usefulness of code?</li>
-                  <li>Does the PR follow Ansible's coding guidelines?</li>
-                  <li>Does it follow the CRUD principles (Create, Read, Update, Delete)?</li>
+                  <li>One thing I think is often overlooked here is that you don't need to be a programmers, or have any understanding of the internals to do a functional or documentation review.</li>
+                  <li>We know the "how to review" parts of Ansible's Docs need some work, what would you like to see there? - give comments in Chat or join in #ansible-community</li>
+                  <li>I accept some of this is subjective, so we are looking for a net improvement<li>
               </ul>
+          </aside>
+        </section>
+
+
+        <section class="text-center">
+          <h2>Development Process: Functional Reviews</h2>
+          <ul>
+             <li>Does it work?</li>
+             <li>Address a use case you have?</li>
+             <li>Does it break and edge/use case you have?</li>
+             <li>Is the interface clear</li>
           </ul>
           <aside class="notes">
               <ul>
@@ -337,6 +333,44 @@
               </ul>
           </aside>
         </section>
+
+        <section class="text-center">
+          <h2>Development Process: Documentation Reviews</h2>
+          <ul>
+              <li>Are the docs clear, is there any ambiguity?</li>
+              <li>Do the examples work?</li>
+              <li>Is there any missing knowledge?</li>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li>One thing I think is often overlooked here is that you don't need to be a programmers, or have any understanding of the internals to do a functional or documentation review.</li>
+                  <li>We know the "how to review" parts of Ansible's Docs need some work, what would you like to see there? - give comments in Chat or join in #ansible-community</li>
+                  <li>I accept some of this is subjective, so we are looking for a net improvement<li>
+              </ul>
+          </aside>
+        </section>
+
+        <section class="text-center">
+          <h2>Development Process: Code Reviews</h2>
+          <ul>
+             <li>Does the PR make the best use of APIs or optimization or indicating usefulness of code?</li>
+             <li>Does the PR follow Ansible's coding guidelines?</li>
+             <li>Does it follow the CRUD principles (Create, Read, Update, Delete)?</li>
+          </ul>
+          <aside class="notes">
+              <ul>
+                  <li>One thing I think is often overlooked here is that you don't need to be a programmers, or have any understanding of the internals to do a functional or documentation review.</li>
+                  <li>We know the "how to review" parts of Ansible's Docs need some work, what would you like to see there? - give comments in Chat or join in #ansible-community</li>
+                  <li>I accept some of this is subjective, so we are looking for a net improvement<li>
+              </ul>
+          </aside>
+        </section>
+
+
+
+
+
+
 
         <section class="text-center">
           <h2>Development Process: How to review</h2>
@@ -408,15 +442,15 @@
               <li>Cross functional: Core, Documentation, Testing</li>
               <li>Cloud Providers and VMs: AWS, Azure, Docker, Linode, VMware</li>
               <li>Networking: Most platforms covered</li>
-              <li></li>
-              <li></li>
               <li>Operating Systems: AIX, BSD, HP-UX, Linux, Solaris, Windows</li>
               <li>Related projects: ansible-lint, AWX (Tower), Galaxy, Molecule</li>
               <li>Plus many more...</li>
+              <li>Full list: https://github.com/ansible/community/wiki</li>
           </ul>
           <aside class="notes">
               <ul>
                   <li>We've mentioned this a few times, but what are they?</li>
+                  <li>BROWSER: https://github.com/ansible/community/wiki</li>
               </ul>
           </aside>
         </section>
@@ -464,6 +498,7 @@
         width: "85%",
         height: "90%",
         transition: "fade",
+        slideNumber: true,
 
         // More info https://github.com/hakimel/reveal.js#dependencies
         // Notes plugin must remain local for now.
